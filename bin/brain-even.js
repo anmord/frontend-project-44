@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+
 const parityCheck = () => {
   console.log('Welcome to the Brain Games!');
   const nameRequest = readlineSync.question('May I have your name? ');
@@ -20,42 +21,33 @@ const parityCheck = () => {
       if ((randomNumberThree % 2 === 0 & numberUser === 'yes') || (randomNumberThree % 2 !== 0 & numberUser === 'no')) {
         console.log('Correct!');
         console.log(`Congratulations, ${nameRequest}!`);
-      }
-      else if (randomNumberThree % 2 === 0 & numberUser === 'no') {
+      } else if (randomNumberThree % 2 === 0 & numberUser === 'no') {
         console.log("'no' is wrong answer ;(. Correct answer was 'yes'");
         console.log(`Let's try again, ${nameRequest}!`);
-      } 
-      else if (randomNumberThree % 2 !== 0 & numberUser === 'yes') {
+      } else if (randomNumberThree % 2 !== 0 & numberUser === 'yes') {
         console.log("'yes' is wrong answer ;(. Correct answer was 'no'");
         console.log(`Let's try again, ${nameRequest}!`);
-      } 
-      else {
+      } else {
         console.log('error');
       }
-    }
-    else if (randomNumberTwo % 2 === 0 & numberUser === 'no') {
+    } else if (randomNumberTwo % 2 === 0 & numberUser === 'no') {
       console.log("'no' is wrong answer ;(. Correct answer was 'yes'");
       console.log(`Let's try again, ${nameRequest}!`);
-    } 
-    else if (randomNumberTwo % 2 !== 0 & numberUser === 'yes') {
+    } else if (randomNumberTwo % 2 !== 0 & numberUser === 'yes') {
       console.log("'yes' is wrong answer ;(. Correct answer was 'no'");
       console.log(`Let's try again, ${nameRequest}!`);
-    } 
-    else {
+    } else {
       console.log('error');
-    }  
-  }
-  else if (randomNumberOne % 2 === 0 & numberUser === 'no') {
+    }
+  } else if (randomNumberOne % 2 === 0 & numberUser === 'no') {
     console.log("'no' is wrong answer ;(. Correct answer was 'yes'");
     console.log(`Let's try again, ${nameRequest}!`);
-  } 
-  else if (randomNumberOne % 2 !== 0 & numberUser === 'yes') {
+  } else if (randomNumberOne % 2 !== 0 & numberUser === 'yes') {
     console.log("'yes' is wrong answer ;(. Correct answer was 'no'");
     console.log(`Let's try again, ${nameRequest}!`);
-  } 
-  else {
+  } else {
     console.log(`${numberUser} is wrong answer ;(. Correct answer was 'no'`);
     console.log(`Let's try again, ${nameRequest}!`);
-  }    
-}
+  }
+};
 parityCheck();
