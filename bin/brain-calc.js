@@ -46,9 +46,14 @@ const parityCheck = () => {
   const numberOfQuestions = 3;
   let askedQuestions = 0;
   console.log('What is the result of the expression?');
-  while (askedQuestions < numberOfQuestions && askQuestion(name)) {
-    askedQuestions++;
+  while (askedQuestions < numberOfQuestions) {
+    if (askQuestion(name)) {
+      askedQuestions++;
+    } else {
+      break;
+    }
   }
+
   if (askedQuestions == numberOfQuestions) {
     console.log(`Congratulations, ${name}!`);
   }
