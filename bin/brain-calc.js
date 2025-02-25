@@ -44,14 +44,12 @@ const genInt = () => { return Math.floor(Math.random() * 10); }
 const parityCheck = () => {
   const name = greeting();
   const numberOfQuestions = 3;
-  let askedQuestions = 0;
   console.log('What is the result of the expression?');
 
-  while (askedQuestions < numberOfQuestions) {
+  for (let i = 0; i < numberOfQuestions; i++) {
     if (!askQuestion(name)) {
       return
     }
-    askedQuestions++;
   }
   console.log(`Congratulations, ${name}!`);
 };
