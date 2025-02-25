@@ -31,9 +31,11 @@ const askQuestion = (name) => {
   const expected = solve(sign, x, y);
   if (userAnswer === expected) {
     console.log("Correct!");
+    return true;
   } else {
     console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${expected}'`);
     console.log(`Let's try again, ${name}!`);
+    return false;
   }
 }
 
@@ -41,11 +43,15 @@ const genInt = () => { return Math.floor(Math.random() * 10); }
 
 const parityCheck = () => {
   const name = greeting();
+  const numberOfQuestions = 3;
+  let askedQuestions = 0;
   console.log('What is the result of the expression?');
-  for (let i = 0; i < 3; i++) {
-    askQuestion(name);
+  while (askedQuestions < numberOfQuestions && askQuestion(name)) {
+    askedQuestions++;
   }
-  console.log(`Congratulations, ${name}!`);
+  if (askedQuestions == numberOfQuestions) {
+    console.log(`Congratulations, ${name}!`);
+  }
 };
 
 parityCheck();
