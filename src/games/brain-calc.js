@@ -1,7 +1,8 @@
-import readlineSync from 'readline-sync';
-import {greeting, genInt} from '../utils.js';
+import {genInt} from '../utils.js';
+import {launch} from './selectionofgames.js';
 
 const signs = ['+', '-', '*'];
+const rule = 'What is the result of the expression?';
 
 const solve = (sign, a, b) => {
   switch (sign) {
@@ -16,12 +17,14 @@ const solve = (sign, a, b) => {
   }
 }
 
-export const askQuestion = (name) => {
-  const x = genInt();
-  const y = genInt();
+const genQuestion = () => {
+  const randomNumberOne = genInt();
+  const randomNumberTwo = genInt();
   const sign = signs[genInt(signs.length)];
-  console.log(`Question: ${x} ${sign} ${y}`);
-  const userAnswer = Number(readlineSync.question('Your answer: '));
-  const expected = solve(sign, x, y);
+  const question = `Question: ${randomNumberOne} ${sign} ${randomNumberTwo}`;
+  const expected = solve(sign, randomNumberOne, randomNumberTwo);
+  return [question, expected];
 }
+
+export default () => launch(rule, genQuestion)
 

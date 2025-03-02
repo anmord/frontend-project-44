@@ -1,23 +1,13 @@
-import readlineSync from 'readline-sync';
-import {greeting, genInt} from '../utils.js';
+import {genInt} from '../utils.js';
+import {launch} from './selectionofgames.js'
 
-const parityCheck = () => {
-  const name = greeting();
-  console.log('Answer "yes" if the number is even, otherwise answer "no"');
-  const numberOfQuestions = 3;
-  for (let i = 0; i < numberOfQuestions; i++) {
-    const randomNumber = genInt();
-    console.log(`Question: ${randomNumber}`);
-    const userAnswer = readlineSync.question('Your answer: ');
-    const correctAnswer = randomNumber % 2 === 0 ? 'yes' : 'no';
-    if (correctAnswer === userAnswer) {
-        console.log("Correct!");
-        return;
-    } 
-    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
-    console.log(`Let's try again, ${name}!`);
-  }
-  console.log(`Congratulations, ${name}!`);
+const rule = 'Answer "yes" if the number is even, otherwise answer "no"';
+
+const genQuestion = () => {
+  const randomNumber = genInt();
+  const question = `Question: ${randomNumber}`;
+  const expected = randomNumber % 2 === 0 ? 'yes' : 'no';
+  return [question, expected];
 }
 
-export default parityCheck;
+export default () => launch(rule, genQuestion)

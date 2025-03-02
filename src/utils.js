@@ -7,7 +7,7 @@ export const greeting = () => {
   return name;
 }
 
-export const genInt = (maximum = 100) => { 
-    return Math.floor(Math.random() * maximum);
+export const genInt = (maximum = 10) => { 
+  return Math.floor(Math.random() * maximum);
 }
 
