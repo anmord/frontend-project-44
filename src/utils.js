@@ -5,9 +5,6 @@ export const greeting = () => {
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
   return name;
-}
+};
 
-export const genInt = (maximum = 10) => { 
-  return Math.floor(Math.random() * maximum);
-}
-
+export const genInt = (min = 0, max = 10) => Math.floor(Math.random() * (max - min + 1) + min);

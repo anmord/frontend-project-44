@@ -1,5 +1,5 @@
-import {genInt} from '../utils.js';
-import {launch} from './selectionofgames.js';
+import { genInt } from '../utils.js';
+import launch from './selectionofgames.js';
 
 const signs = ['+', '-', '*'];
 const rule = 'What is the result of the expression?';
@@ -13,9 +13,10 @@ const solve = (sign, a, b) => {
     case '*':
       return a * b;
     default:
-      console.log("Unknown operator :(");
+      console.log('Unknown operator :(');
+      return undefined;
   }
-}
+};
 
 const genQuestion = () => {
   const randomNumberOne = genInt();
@@ -24,7 +25,6 @@ const genQuestion = () => {
   const question = `Question: ${randomNumberOne} ${sign} ${randomNumberTwo}`;
   const expected = solve(sign, randomNumberOne, randomNumberTwo);
   return [question, expected];
-}
+};
 
-export default () => launch(rule, genQuestion)
-
+export default () => launch(rule, genQuestion);
