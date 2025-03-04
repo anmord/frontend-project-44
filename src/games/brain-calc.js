@@ -21,7 +21,7 @@ const solve = (sign, a, b) => {
 const genQuestion = () => {
   const randomNumberOne = genInt();
   const randomNumberTwo = genInt();
-  const sign = signs[genInt(signs.length)];
+  const sign = signs[genInt(0, signs.length - 1)];
   const question = `Question: ${randomNumberOne} ${sign} ${randomNumberTwo}`;
   const expected = solve(sign, randomNumberOne, randomNumberTwo);
   return [question, expected];
