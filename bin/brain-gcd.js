@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import parityCheck from '../src/games/brain-gcd.js';
+import launchGames from '../src/games/brain-gcd.js';
 
-parityCheck();
+launchGames();

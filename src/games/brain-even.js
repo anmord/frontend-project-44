@@ -1,5 +1,5 @@
 import { genInt } from '../utils.js';
-import launch from './selectionofgames.js';
+import launch from './selectionOfGames.js';
 
 const rule = 'Answer "yes" if the number is even, otherwise answer "no"';
 

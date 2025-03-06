@@ -1,20 +1,22 @@
 import { genInt } from '../utils.js';
-import launch from './selectionofgames.js';
+import launch from './selectionOfGames.js';
 
 const rule = 'Find the greatest common divisor of given numbers';
 
 const genQuestion = () => {
-  let x = genInt(1, 30);
-  let y = genInt(1, 30);
-  const question = `Question: ${x} ${y}`;
-  while (x !== y) {
-    if (x > y) {
-      x -= y;
+  const randomNumberOne = genInt(1, 30);
+  const randomNumberTwo = genInt(1, 30);
+  const question = `Question: ${randomNumberOne} ${randomNumberTwo}`;
+  let expected = randomNumberOne;
+  let numberTwo = randomNumberTwo;
+  while (expected !== numberTwo) {
+    if (expected > numberTwo) {
+      expected -= numberTwo;
     } else {
-      y -= x;
+      numberTwo -= expected;
     }
   }
-  return [question, x];
+  return [question, expected];
 };
 
 export default () => launch(rule, genQuestion);

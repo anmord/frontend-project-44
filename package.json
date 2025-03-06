@@ -1,16 +1,12 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/anmord/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/anmord/frontend-project-44/actions)",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
+  "description": "This project consists of five brain games. Choose a game, then you need to answer three questions correctly.",
+    "repository": {
     "type": "git",
     "url": "git+https://github.com/anmord/frontend-project-44.git"
   },
-  "author": "",
+  "author": "Anton",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/anmord/frontend-project-44/issues"

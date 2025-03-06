@@ -1,5 +1,5 @@
 import { genInt } from '../utils.js';
-import launch from './selectionofgames.js';
+import launch from './selectionOfGames.js';
 
 const rule = 'What number is missing in the progression?';
 
@@ -13,10 +13,10 @@ const genQuestion = () => {
   for (let i = 0; i < (sequenceLength - 1); i += 1) {
     sequenceOfNumbers.push(Number(sequenceOfNumbers[i]) + sequenceStep);
   }
-  const answer = sequenceOfNumbers[unknownNumber];
+  const expected = sequenceOfNumbers[unknownNumber];
   sequenceOfNumbers[unknownNumber] = '..';
   const question = `Question: ${sequenceOfNumbers.join(' ')}`;
-  return [question, answer];
+  return [question, expected];
 };
 
 export default () => launch(rule, genQuestion);
