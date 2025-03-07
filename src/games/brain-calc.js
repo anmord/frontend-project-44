@@ -1,5 +1,5 @@
 import { genInt } from '../utils.js';
-import launch from './selectionOfGames.js';
+import launch from './selectionGames.js';
 
 const signs = ['+', '-', '*'];
 const rule = 'What is the result of the expression?';
