@@ -1,5 +1,5 @@
 import { genInt } from '../utils.js';
-import launch from './selectionOfGames.js';
+import launch from './selectionGames.js';
 
 const rule = 'What number is missing in the progression?';
 

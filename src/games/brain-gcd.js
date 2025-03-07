@@ -1,5 +1,5 @@
 import { genInt } from '../utils.js';
-import launch from './selectionOfGames.js';
+import launch from './selectionGames.js';
 
 const rule = 'Find the greatest common divisor of given numbers';
 
